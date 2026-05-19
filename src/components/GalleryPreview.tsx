@@ -4,7 +4,7 @@ import autumnImg  from '../assets/images/lacouture-autumn.jpg'
 import freeImg    from '../assets/images/lacouture-freespirit.jpg'
 import fashionImg from '../assets/images/trendix-fashion.jpg'
 import brandImg   from '../assets/images/trendix-brand.jpg'
-import '../styles/GalleryPreview.css'
+import './GalleryPreview.css'
 
 const IMAGES = [
   { src: autumnImg,  label: 'Autumn / Winter 2024', span: 'tall' },

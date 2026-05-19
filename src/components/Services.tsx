@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Zap, Award, ShoppingBag, Star } from 'lucide-react'
-import '../styles/Services.css'
+import './Services.css'
 
 const PILLARS = [
   {

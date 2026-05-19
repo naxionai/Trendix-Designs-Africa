@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import './GalleryFull.css'
+import '../styles/gallery-full.css'
 
 export default function GalleryFull() {
   const [images, setImages] = useState<string[]>([])
@@ -14,8 +14,8 @@ export default function GalleryFull() {
   }, [])
 
   return (
-    <main className="gallery-full container">
-      <h1 className="gallery-full__title">Gallery</h1>
+    <main id="gallery-full" className="gallery-full container">
+      <h1 className="gallery-full__title">Gallery</h1><br />
       {images.length === 0 ? (
         <p className="gallery-full__empty">No images found in Service Images.</p>
       ) : (

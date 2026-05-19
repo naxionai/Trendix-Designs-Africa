@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import '../styles/Navbar.css'
+import './Navbar.css'
 
 const NAV_LINKS = [
   { label: 'Home',     href: '#home' },
@@ -55,18 +55,20 @@ export default function Navbar() {
         </ul>
 
         {/* CTA */}
-        <a
-          className="navbar__cta"
-          onClick={() => handleNavClick('#gallery-full')}
-        >
-          Gallery
-        </a>
-        <a
-          className="navbar__cta"
-          onClick={() => handleNavClick('#contact')}
-        >
-          Get In Touch
-        </a>
+        <div className="navbar__cta-container">
+          <a
+            className="navbar__cta"
+            onClick={() => handleNavClick('#gallery-full')}
+          >
+            Gallery
+          </a>
+          <a
+            className="navbar__cta"
+            onClick={() => handleNavClick('#contact')}
+          >
+            Get In Touch
+          </a>
+        </div>
 
         {/* Hamburger */}
         <button
@@ -89,19 +91,18 @@ export default function Navbar() {
             {link.label}
           </button>
         ))}
-        
         <button
-          className="navbar__mobile-link"
-          onClick={() => handleNavClick('#gallery-full')} >
+          className="navbar__mobile-cta"
+          onClick={() => handleNavClick('#gallery-full')}
+        >
           Gallery
         </button>
         <button
-          className="navbar__mobile-link"
+          className="navbar__mobile-cta"
           onClick={() => handleNavClick('#contact')}
         >
           Get In Touch
         </button>
-        
       </div>
     </nav>
   )

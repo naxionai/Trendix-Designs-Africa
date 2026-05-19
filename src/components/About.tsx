@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import autumnImg from '../assets/images/lacouture-autumn.jpg'
-import '../styles/About.css'
+import './About.css'
 
 const STATS = [
   { value: '3+',   label: 'Years in Fashion' },

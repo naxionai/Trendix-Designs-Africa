@@ -1,134 +1,204 @@
-/* Updated styles for Navbar */
+/* ============================================================
+   Navbar
+   ============================================================ */
 
-/* General Navbar styles */
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
-  background-color: white;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
 }
 
 .navbar--scrolled {
-  background-color: #f8f9fa;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(10, 10, 10, 0.92);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(201, 162, 39, 0.15);
 }
 
-/* Navbar inner container */
+.navbar__cta-container {
+  display: flex;
+  gap: 8px; /* Added 8px gap between CTAs */
+}
+
+@media (min-width: 901px) {
+  .navbar {
+    background: rgba(10, 10, 10, 0.6);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+  }
+
+  .navbar--scrolled {
+    background: rgba(10, 10, 10, 0.72);
+  }
+}
+
 .navbar__inner {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  justify-content: space-between;
+  height: 100%;
+  gap: 32px;
 }
 
-/* Logo styles */
+/* ---------- Logo ---------- */
 .navbar__logo {
   display: flex;
   flex-direction: column;
+  line-height: 1;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 .navbar__logo-main {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #333;
+  font-family: var(--font-display);
+  font-size: 22px;
+  letter-spacing: 0.1em;
+  color: var(--white);
 }
 
 .navbar__logo-sub {
-  font-size: 0.875rem;
-  color: #666;
+  font-family: var(--font-serif);
+  font-size: 10px;
+  font-style: italic;
+  color: var(--gold);
+  letter-spacing: 0.15em;
+  margin-top: 1px;
 }
 
-/* Desktop links */
+/* ---------- Desktop Links ---------- */
 .navbar__links {
   display: flex;
-  gap: 1.5rem;
+  align-items: center;
+  gap: 8px;
 }
 
 .navbar__link {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  padding: 6px 14px;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast);
   background: none;
   border: none;
-  font-size: 1rem;
-  color: #333;
   cursor: pointer;
-  transition: color 0.3s;
 }
 
 .navbar__link:hover {
-  color: #007bff;
+  color: var(--gold);
 }
 
-/* CTA group */
-.navbar__cta-group {
-  display: flex;
-  gap: 6px; /* Reduced gap to 6 pixels */
-  justify-content: flex-start; /* Align buttons to the left */
-}
-
+/* ---------- CTA ---------- */
 .navbar__cta {
-  text-decoration: none;
-  font-size: 1rem;
-  color: #007bff;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 9px 22px;
+  border-radius: var(--radius-sm);
   cursor: pointer;
-  transition: color 0.3s;
+  transition: background var(--transition-fast), color var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .navbar__cta:hover {
-  color: #0056b3;
+  background: var(--gold-light);
 }
 
-/* Hamburger menu */
+/* ---------- Hamburger ---------- */
 .navbar__hamburger {
   display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
+  color: var(--cream);
+  padding: 4px;
 }
 
-/* Mobile drawer */
+/* ---------- Mobile Drawer ---------- */
 .navbar__mobile {
   display: none;
   flex-direction: column;
-  background-color: white;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
-  transform: translateY(-100%);
+  background: var(--black-soft);
+  border-top: 0;
+  padding: 0 24px;
+  gap: 4px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.25s ease;
 }
 
 .navbar__mobile--open {
-  display: flex;
-  transform: translateY(0);
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
+  max-height: 400px;
+  padding: 16px 24px 24px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .navbar__mobile-link {
-  padding: 1rem;
-  text-align: center;
-  font-size: 1rem;
-  color: #333;
-  border-bottom: 1px solid #ddd;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cream-dim);
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  text-align: left;
+  background: none;
+  border: none;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: color var(--transition-fast);
 }
 
 .navbar__mobile-link:hover {
-  background-color: #f8f9fa;
+  color: var(--gold);
 }
 
-/* Mobile-specific styles */
-@media (max-width: 768px) {
-  .navbar__mobile {
-    flex-direction: column;
+.navbar__mobile-cta {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: var(--gold);
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  margin-top: 16px;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.navbar__mobile-cta:hover {
+  background: var(--gold-light);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px) {
+  .navbar__links,
+  .navbar__cta {
+    display: none;
   }
 
-  .navbar__mobile-link {
-    width: 200%; /* Set width to 200% */
-    margin: 0 auto; /* Center the buttons */
+  .navbar__hamburger {
+    display: flex;
+  }
+
+  .navbar__mobile {
+    display: flex;
   }
 }
