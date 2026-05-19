@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react'
 import { ArrowDown } from 'lucide-react'
 import heroImg from '../assets/images/lacouture-freespirit.jpg'
-import './Hero.css'
+import '../styles/Hero.css'
 
 export default function Hero() {
   const scrollRef = useRef<HTMLDivElement>(null)

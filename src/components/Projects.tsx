@@ -4,7 +4,7 @@ import fashionImg from '../assets/images/trendix-fashion.jpg'
 import brandImg    from '../assets/images/trendix-brand.jpg'
 import autumnImg   from '../assets/images/lacouture-autumn.jpg'
 import freeImg     from '../assets/images/lacouture-freespirit.jpg'
-import './Projects.css'
+import '../styles/Projects.css'
 
 const PROJECTS = [
   {

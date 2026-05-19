@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X } from 'lucide-react'
-import './Navbar.css'
+import '../styles/Navbar.css'
 
 const NAV_LINKS = [
   { label: 'Home',     href: '#home' },
@@ -22,8 +22,13 @@ export default function Navbar() {
 
   const handleNavClick = (href: string) => {
     setMenuOpen(false)
-    const el = document.querySelector(href)
-    if (el) el.scrollIntoView({ behavior: 'smooth' })
+    // navigate via hash so App renders the target page if needed
+    if (window.location.hash !== href) window.location.hash = href
+    // try scrolling after navigation / mount (short delay)
+    setTimeout(() => {
+      const el = document.querySelector(href)
+      if (el) el.scrollIntoView({ behavior: 'smooth' })
+    }, 150)
   }
 
   return (

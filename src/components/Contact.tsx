@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import { Send } from 'lucide-react'
-import './Contact.css'
+import '../styles/Contact.css'
 
 // Simple TikTok icon (lucide doesn't have one)
 function TikTokIcon({ size = 18 }: { size?: number }) {
@@ -91,13 +91,13 @@ export default function Contact() {
 
           {/* Social icons */}
           <div className="contact__socials">
-            <a href="https://instagram.com/trendix.official" target="_blank" rel="noreferrer" className="contact__social-btn" aria-label="Instagram">
+            <a href="https://instagram.com/trendix.official" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="Instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="contact__social-btn" aria-label="Facebook">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="Facebook">
               <FacebookIcon size={18} />
             </a>
-            <a href="https://tiktok.com/@trendix.official" target="_blank" rel="noreferrer" className="contact__social-btn" aria-label="TikTok">
+            <a href="https://tiktok.com/@trendix.official" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="TikTok">
               <TikTokIcon size={18} />
             </a>
           </div>
