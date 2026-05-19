@@ -1,0 +1,1 @@
+var e=`/Trendix-Designs-Africa/assets/trendix-brand-IDi5tNt-.jpg`;export{e as default};

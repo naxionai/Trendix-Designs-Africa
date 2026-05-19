@@ -1,0 +1,1 @@
+var e=`/Trendix-Designs-Africa/assets/7-Z1RtXyGW.jpeg`;export{e as default};

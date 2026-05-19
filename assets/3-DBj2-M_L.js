@@ -1,0 +1,1 @@
+var e=`/Trendix-Designs-Africa/assets/trendix-fashion-BGaxgHdw.jpg`;export{e as default};

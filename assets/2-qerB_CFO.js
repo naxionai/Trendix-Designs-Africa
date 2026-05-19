@@ -1,0 +1,1 @@
+var e=`/Trendix-Designs-Africa/assets/lacouture-freespirit-DX2x7XHw.jpg`;export{e as default};

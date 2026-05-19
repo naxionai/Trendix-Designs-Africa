@@ -1,0 +1,1 @@
+var e=`/Trendix-Designs-Africa/assets/lacouture-autumn-B250GLz2.jpg`;export{e as default};
