@@ -112,6 +112,13 @@
   background: var(--gold-light);
 }
 
+.navbar__cta-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px; /* Add 6px padding between Gallery and Get In Touch */
+  }
+
 /* ---------- Hamburger ---------- */
 .navbar__hamburger {
   display: none;
@@ -173,7 +180,7 @@
   background: var(--gold);
   padding: 12px;
   border-radius: var(--radius-sm);
-  margin-top: 16px;
+  margin-top: 12px;
   cursor: pointer;
   transition: background var(--transition-fast);
 }
@@ -195,5 +202,19 @@
 
   .navbar__mobile {
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Ensure spacing for buttons */
+  }
+
+  .navbar__mobile-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .navbar__cta {
+    width: 100%;
+    text-align: center;
   }
 }

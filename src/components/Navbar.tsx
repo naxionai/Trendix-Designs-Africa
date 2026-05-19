@@ -6,7 +6,7 @@ const NAV_LINKS = [
   { label: 'Home',     href: '#home' },
   { label: 'About',    href: '#about' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Gallery',  href: '#gallery' },
+  { label: 'Gallery Preview',  href: '#gallery' },
   { label: 'Contact',  href: '#contact' },
 ]
 
@@ -57,6 +57,12 @@ export default function Navbar() {
         {/* CTA */}
         <a
           className="navbar__cta"
+          onClick={() => handleNavClick('#gallery-full')}
+        >
+          Gallery
+        </a>
+        <a
+          className="navbar__cta"
           onClick={() => handleNavClick('#contact')}
         >
           Get In Touch
@@ -83,12 +89,19 @@ export default function Navbar() {
             {link.label}
           </button>
         ))}
+        
         <button
-          className="navbar__mobile-cta"
+          className="navbar__mobile-link"
+          onClick={() => handleNavClick('#gallery-full')} >
+          Gallery
+        </button>
+        <button
+          className="navbar__mobile-link"
           onClick={() => handleNavClick('#contact')}
         >
           Get In Touch
         </button>
+        
       </div>
     </nav>
   )

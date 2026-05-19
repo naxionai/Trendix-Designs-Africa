@@ -1,1 +1,134 @@
-/* file moved to src/styles/Navbar.css */
+/* Updated styles for Navbar */
+
+/* General Navbar styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.navbar--scrolled {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar inner container */
+.navbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+/* Logo styles */
+.navbar__logo {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.navbar__logo-main {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.navbar__logo-sub {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+/* Desktop links */
+.navbar__links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.navbar__link {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar__link:hover {
+  color: #007bff;
+}
+
+/* CTA group */
+.navbar__cta-group {
+  display: flex;
+  gap: 6px; /* Reduced gap to 6 pixels */
+  justify-content: flex-start; /* Align buttons to the left */
+}
+
+.navbar__cta {
+  text-decoration: none;
+  font-size: 1rem;
+  color: #007bff;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.navbar__cta:hover {
+  color: #0056b3;
+}
+
+/* Hamburger menu */
+.navbar__hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile drawer */
+.navbar__mobile {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  transform: translateY(-100%);
+}
+
+.navbar__mobile--open {
+  display: flex;
+  transform: translateY(0);
+}
+
+.navbar__mobile-link {
+  padding: 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.navbar__mobile-link:hover {
+  background-color: #f8f9fa;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .navbar__mobile {
+    flex-direction: column;
+  }
+
+  .navbar__mobile-link {
+    width: 200%; /* Set width to 200% */
+    margin: 0 auto; /* Center the buttons */
+  }
+}
