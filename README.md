@@ -71,3 +71,19 @@ export default defineConfig([
   },
 ])
 ```
+
+To get running:
+
+``` bash
+# 1. Unzip, then:
+npm install
+npm run dev
+
+# 2. Before deploying to GitHub Pages, update vite.config.ts:
+base: '/your-repo-name/'
+
+# 3. Deploy:
+npm install --save-dev gh-pages
+# add "deploy": "gh-pages -d dist" to package.json scripts
+npm run deploy
+```
