@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react'
-import { Send } from 'lucide-react'
-import '../styles/Contact.css'
+import { useRef, useEffect } from 'react'
+import contactImage from '../assets/images/contact.jpeg'
+import './Contact.css'
 
 // Simple TikTok icon (lucide doesn't have one)
 function TikTokIcon({ size = 18 }: { size?: number }) {
@@ -27,12 +27,17 @@ function FacebookIcon({ size = 18 }: { size?: number }) {
   )
 }
 
-type FormState = { name: string; email: string; subject: string; message: string }
+function WhatsAppIcon({ size = 18 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M16.988 14.684c-.272-.136-1.61-.797-1.86-.89-.25-.093-.43-.136-.61.136-.18.272-.7.89-.86 1.07-.16.18-.32.2-.59.068-.272-.136-1.15-.423-2.19-1.35-.81-.723-1.36-1.61-1.52-1.88-.16-.272-.017-.42.12-.556.123-.123.272-.32.41-.48.136-.16.18-.272.272-.453.09-.18.045-.34-.023-.48-.068-.136-.61-1.47-.84-2.02-.22-.53-.45-.46-.61-.47h-.52c-.136 0-.34.045-.52.272-.18.272-.68.66-.68 1.61s.7 1.87.8 2c.09.136 1.38 2.1 3.35 2.94.47.2.84.32 1.13.41.47.15.9.13 1.24.08.38-.056 1.23-.5 1.4-.99.18-.49.18-.91.13-.99-.045-.09-.2-.136-.47-.272z" />
+      <path d="M20.52 3.48A11.92 11.92 0 0 0 12 0C5.373 0 0 5.373 0 12c0 2.11.55 4.17 1.6 5.98L0 24l6.24-1.62A11.92 11.92 0 0 0 12 24c6.627 0 12-5.373 12-12 0-3.2-1.25-6.21-3.48-8.52zm-8.52 19.2c-1.87 0-3.7-.51-5.29-1.48l-.38-.23-3.7.96.99-3.6-.25-.37a10.8 10.8 0 0 1-1.6-5.9c0-6 4.89-10.88 10.88-10.88 2.91 0 5.65 1.13 7.7 3.18a10.8 10.8 0 0 1 3.18 7.7c0 6-4.89 10.88-10.88 10.88z" />
+    </svg>
+  );
+}
 
 export default function Contact() {
   const sectionRef = useRef<HTMLDivElement>(null)
-  const [form, setForm]         = useState<FormState>({ name: '', email: '', subject: '', message: '' })
-  const [submitted, setSubmitted] = useState(false)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -42,18 +47,6 @@ export default function Contact() {
     sectionRef.current?.querySelectorAll('.reveal').forEach(el => observer.observe(el))
     return () => observer.disconnect()
   }, [])
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
-  }
-
-  const handleSubmit = (e: React.MouseEvent) => {
-    e.preventDefault()
-    // In production: wire to your backend / emailjs / formspree
-    if (form.name && form.email && form.message) {
-      setSubmitted(true)
-    }
-  }
 
   return (
     <section id="contact" className="contact" ref={sectionRef}>
@@ -75,96 +68,44 @@ export default function Contact() {
           <div className="contact__details">
             <div className="contact__detail-row">
               <span className="contact__detail-label">Email</span>
-              <a href="mailto:hello@trendix.com" className="contact__detail-value">
-                hello@trendix.com
+              <a href="mailto:trendixcreative@gmail.com" className="contact__detail-value">
+                trendixcreative@gmail.com
               </a>
             </div>
             <div className="contact__detail-row">
-              <span className="contact__detail-label">Website</span>
-              <span className="contact__detail-value">www.trendix.com</span>
+              <span className="contact__detail-label">Number</span>
+              <span className="contact__detail-value">+263 71 631 5942</span>
             </div>
             <div className="contact__detail-row">
-              <span className="contact__detail-label">Follow</span>
-              <span className="contact__detail-value">@Trendix.Official</span>
+              <span className="contact__detail-label">Harare</span>
+              <span className="contact__detail-value">Trendix Design Africa</span>
             </div>
           </div>
 
           {/* Social icons */}
           <div className="contact__socials">
-            <a href="https://instagram.com/trendix.official" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="Instagram">
+            <a href="https://www.instagram.com/trendixpodcast" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="Instagram">
               <InstagramIcon size={18} />
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="Facebook">
+            <a href="https://www.facebook.com/share/1BGCQL5BH2/" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="Facebook">
               <FacebookIcon size={18} />
             </a>
-            <a href="https://tiktok.com/@trendix.official" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="TikTok">
+            <a href="https://whatsapp.com/channel/0029VbAX2Wv0Vyc7uDT5fI0Q" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="WhatsApp">
+              <WhatsAppIcon size={18} />
+            </a>
+            <a href="https://tiktok.com/@skitkwatrendix" target="_blank" rel="noopener noreferrer" className="contact__social-btn" aria-label="TikTok">
               <TikTokIcon size={18} />
             </a>
           </div>
         </div>
 
-        {/* Right column — form */}
-        <div className="contact__form-wrap reveal">
-          {submitted ? (
-            <div className="contact__success">
-              <span className="contact__success-icon">✦</span>
-              <h3>Message Sent!</h3>
-              <p>Thank you for reaching out. We'll be in touch soon.</p>
-            </div>
-          ) : (
-            <div className="contact__form">
-              <div className="contact__form-row">
-                <div className="contact__field">
-                  <label className="contact__label">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Your name"
-                    className="contact__input"
-                    value={form.name}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="contact__field">
-                  <label className="contact__label">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="your@email.com"
-                    className="contact__input"
-                    value={form.email}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div className="contact__field">
-                <label className="contact__label">Subject</label>
-                <input
-                  type="text"
-                  name="subject"
-                  placeholder="What's this about?"
-                  className="contact__input"
-                  value={form.subject}
-                  onChange={handleChange}
-                />
-              </div>
-              <div className="contact__field">
-                <label className="contact__label">Message</label>
-                <textarea
-                  name="message"
-                  placeholder="Tell us about your project..."
-                  className="contact__textarea"
-                  rows={5}
-                  value={form.message}
-                  onChange={handleChange}
-                />
-              </div>
-              <button className="contact__submit" onClick={handleSubmit}>
-                <Send size={16} />
-                Send Message
-              </button>
-            </div>
-          )}
+        {/* Right column — image */}
+        <div className="contact__image-wrap reveal">
+          <img 
+            src={contactImage}
+            alt="Trendix Creative" 
+            className="contact__image"
+          />
         </div>
 
       </div>
