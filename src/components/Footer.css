@@ -10,7 +10,7 @@
 
 .footer__inner {
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr auto;
   gap: 40px;
   align-items: center;
 }
@@ -43,30 +43,6 @@
   font-size: 12px;
   color: var(--cream-dim);
   margin-top: 6px;
-}
-
-/* ---------- Links ---------- */
-.footer__links {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  flex-wrap: wrap;
-}
-
-.footer__link {
-  font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--cream-dim);
-  padding: 6px 12px;
-  border-radius: var(--radius-sm);
-  transition: color var(--transition-fast);
-}
-
-.footer__link:hover {
-  color: var(--gold);
 }
 
 /* ---------- Copy ---------- */

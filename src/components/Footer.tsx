@@ -13,14 +13,6 @@ export default function Footer() {
           <p className="footer__slogan">Power in Creativity</p>
         </div>
 
-        <div className="footer__links">
-          {['Home', 'About', 'Projects', 'Gallery', 'Contact'].map(link => (
-            <a key={link} href={`#${link.toLowerCase()}`} className="footer__link">
-              {link}
-            </a>
-          ))}
-        </div>
-
         <div className="footer__copy">
           <span>© {year} Trendix · Tendai W Masanga. All rights reserved.</span>
           <span className="footer__credit">Built by Nature · NexionAI</span>
