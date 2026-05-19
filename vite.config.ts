@@ -5,5 +5,5 @@ import react from '@vitejs/plugin-react'
 // e.g. if your repo is github.com/nature-/trendix-website → base: '/trendix-website/'
 export default defineConfig({
   plugins: [react()],
-  base: '/trendix-website/',  // ← change this to match your GitHub repo name
+  base: '/Trendix-Designs-Africa/',  // ← change this to match your GitHub repo name
 })
