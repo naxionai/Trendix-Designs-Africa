@@ -77,7 +77,7 @@ export default function Contact() {
               <span className="contact__detail-value">+263 71 631 5942</span>
             </div>
             <div className="contact__detail-row">
-              <span className="contact__detail-label">Harare</span>
+              <span className="contact__detail-label">Harare Zimbabwe</span>
               <span className="contact__detail-value">Trendix Design Africa</span>
             </div>
           </div>
