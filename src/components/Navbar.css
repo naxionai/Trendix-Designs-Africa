@@ -14,8 +14,22 @@
 
 .navbar--scrolled {
   background: rgba(10, 10, 10, 0.92);
+  -webkit-backdrop-filter: blur(12px);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+}
+
+@media (min-width: 901px) {
+  .navbar {
+    background: rgba(10, 10, 10, 0.6);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(201, 162, 39, 0.12);
+  }
+
+  .navbar--scrolled {
+    background: rgba(10, 10, 10, 0.72);
+  }
 }
 
 .navbar__inner {
@@ -110,17 +124,22 @@
   display: none;
   flex-direction: column;
   background: var(--black-soft);
-  border-top: 1px solid rgba(201, 162, 39, 0.2);
-  padding: 16px 24px 24px;
+  border-top: 0;
+  padding: 0 24px;
   gap: 4px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, padding 0.4s ease;
+  opacity: 0;
+  pointer-events: none;
+  transition: max-height 0.4s ease, padding 0.4s ease, opacity 0.25s ease;
 }
 
 .navbar__mobile--open {
+  border-top: 1px solid rgba(201, 162, 39, 0.2);
   max-height: 400px;
   padding: 16px 24px 24px;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .navbar__mobile-link {
